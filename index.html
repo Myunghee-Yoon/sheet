@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스프레드시트 도구 비교 분석</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <h1>스프레드시트 도구 비교 분석</h1>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#overview" class="nav-link active">개요</a></li>
+          <li><a href="#detailed" class="nav-link">상세 비교</a></li>
+          <li><a href="#matrix" class="nav-link">비교 매트릭스</a></li>
+          <li><a href="#recommendation" class="nav-link">추천 엔진</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 개요 섹션 -->
+    <section id="overview" class="section">
+      <div class="container">
+        <h2 class="section-title">스프레드시트 도구 개요</h2>
+        <p class="section-desc">Excel, Google Sheets, Airtable의 주요 특징과 용도를 한눈에 비교해보세요.</p>
+        
+        <div class="tools-overview">
+          <div class="tool-card" style="--tool-color: #1f5582;">
+            <div class="tool-icon">📊</div>
+            <h3 class="tool-name">Microsoft Excel</h3>
+            <p class="tool-summary">전통적 스프레드시트의 강자</p>
+            <p class="tool-pricing">유료 (Microsoft 365 구독)</p>
+          </div>
+          
+          <div class="tool-card" style="--tool-color: #0f9d58;">
+            <div class="tool-icon">📈</div>
+            <h3 class="tool-name">Google Sheets</h3>
+            <p class="tool-summary">클라우드 기반 협업의 혁신</p>
+            <p class="tool-pricing">무료 (Google 계정 필요)</p>
+          </div>
+          
+          <div class="tool-card" style="--tool-color: #ff6900;">
+            <div class="tool-icon">🗃️</div>
+            <h3 class="tool-name">Airtable</h3>
+            <p class="tool-summary">스프레드시트와 데이터베이스의 융합</p>
+            <p class="tool-pricing">Freemium (월 $20/사용자부터)</p>
+          </div>
+        </div>
+
+        <div class="comparison-table-container">
+          <h3>주요 특성 비교</h3>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>특성</th>
+                <th>Excel</th>
+                <th>Google Sheets</th>
+                <th>Airtable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>협업 기능</td>
+                <td><div class="rating-bar" style="--rating: 40%; --color: #1f5582;"></div></td>
+                <td><div class="rating-bar" style="--rating: 100%; --color: #0f9d58;"></div></td>
+                <td><div class="rating-bar" style="--rating: 80%; --color: #ff6900;"></div></td>
+              </tr>
+              <tr>
+                <td>데이터 처리</td>
+                <td><div class="rating-bar" style="--rating: 100%; --color: #1f5582;"></div></td>
+                <td><div class="rating-bar" style="--rating: 60%; --color: #0f9d58;"></div></td>
+                <td><div class="rating-bar" style="--rating: 60%; --color: #ff6900;"></div></td>
+              </tr>
+              <tr>
+                <td>비용 효율성</td>
+                <td><div class="rating-bar" style="--rating: 40%; --color: #1f5582;"></div></td>
+                <td><div class="rating-bar" style="--rating: 100%; --color: #0f9d58;"></div></td>
+                <td><div class="rating-bar" style="--rating: 60%; --color: #ff6900;"></div></td>
+              </tr>
+              <tr>
+                <td>접근성</td>
+                <td><div class="rating-bar" style="--rating: 60%; --color: #1f5582;"></div></td>
+                <td><div class="rating-bar" style="--rating: 100%; --color: #0f9d58;"></div></td>
+                <td><div class="rating-bar" style="--rating: 80%; --color: #ff6900;"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="filter-buttons">
+          <h3>특성별 필터링</h3>
+          <div class="btn-group">
+            <button class="btn btn--secondary filter-btn" data-filter="collaboration">협업기능</button>
+            <button class="btn btn--secondary filter-btn" data-filter="dataProcessing">데이터처리</button>
+            <button class="btn btn--secondary filter-btn" data-filter="cost">비용</button>
+            <button class="btn btn--secondary filter-btn" data-filter="accessibility">접근성</button>
+            <button class="btn btn--outline filter-btn" data-filter="all">모두 보기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 상세 비교 섹션 -->
+    <section id="detailed" class="section">
+      <div class="container">
+        <h2 class="section-title">상세 도구 비교</h2>
+        <p class="section-desc">각 스프레드시트 도구의 특성, 장단점, 주요 활용 사례를 자세히 알아보세요.</p>
+        
+        <div class="tabs">
+          <div class="tabs-header">
+            <button class="tab-btn active" data-tab="excel">Excel</button>
+            <button class="tab-btn" data-tab="googleSheets">Google Sheets</button>
+            <button class="tab-btn" data-tab="airtable">Airtable</button>
+          </div>
+          
+          <div class="tabs-content">
+            <!-- Excel 탭 내용 -->
+            <div class="tab-panel active" id="tab-excel">
+              <div class="tab-header" style="--tool-color: #1f5582;">
+                <div class="tool-icon large">📊</div>
+                <h3>Microsoft Excel</h3>
+                <p>전통적 스프레드시트의 강자</p>
+              </div>
+              
+              <div class="features-grid">
+                <div class="feature-card">
+                  <h4>핵심 특징</h4>
+                  <ul id="excel-features" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>주요 장점</h4>
+                  <ul id="excel-advantages" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>제한사항/단점</h4>
+                  <ul id="excel-disadvantages" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>주요 활용 분야</h4>
+                  <ul id="excel-useCases" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Google Sheets 탭 내용 -->
+            <div class="tab-panel" id="tab-googleSheets">
+              <div class="tab-header" style="--tool-color: #0f9d58;">
+                <div class="tool-icon large">📈</div>
+                <h3>Google Sheets</h3>
+                <p>클라우드 기반 협업의 혁신</p>
+              </div>
+              
+              <div class="features-grid">
+                <div class="feature-card">
+                  <h4>핵심 특징</h4>
+                  <ul id="googleSheets-features" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>주요 장점</h4>
+                  <ul id="googleSheets-advantages" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>제한사항/단점</h4>
+                  <ul id="googleSheets-disadvantages" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>주요 활용 분야</h4>
+                  <ul id="googleSheets-useCases" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Airtable 탭 내용 -->
+            <div class="tab-panel" id="tab-airtable">
+              <div class="tab-header" style="--tool-color: #ff6900;">
+                <div class="tool-icon large">🗃️</div>
+                <h3>Airtable</h3>
+                <p>스프레드시트와 데이터베이스의 융합</p>
+              </div>
+              
+              <div class="features-grid">
+                <div class="feature-card">
+                  <h4>핵심 특징</h4>
+                  <ul id="airtable-features" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>주요 장점</h4>
+                  <ul id="airtable-advantages" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>제한사항/단점</h4>
+                  <ul id="airtable-disadvantages" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+                
+                <div class="feature-card">
+                  <h4>주요 활용 분야</h4>
+                  <ul id="airtable-useCases" class="feature-list">
+                    <!-- JavaScript로 채워짐 -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 비교 매트릭스 섹션 -->
+    <section id="matrix" class="section">
+      <div class="container">
+        <h2 class="section-title">도구 비교 매트릭스</h2>
+        <p class="section-desc">세 가지 도구를 주요 특성별로 나란히 비교하여 확인하세요.</p>
+        
+        <div class="matrix-container">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>특성</th>
+                <th class="tool-column" style="--tool-color: #1f5582;">
+                  <div class="tool-icon">📊</div>
+                  <span>Excel</span>
+                </th>
+                <th class="tool-column" style="--tool-color: #0f9d58;">
+                  <div class="tool-icon">📈</div>
+                  <span>Google Sheets</span>
+                </th>
+                <th class="tool-column" style="--tool-color: #ff6900;">
+                  <div class="tool-icon">🗃️</div>
+                  <span>Airtable</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="matrix-body">
+              <!-- JavaScript로 채워짐 -->
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="use-case-selector">
+          <h3>활용 사례별 최적의 도구</h3>
+          <div class="use-cases">
+            <div class="use-case-card" data-recommended="excel">
+              <h4>데이터 분석 중심</h4>
+              <p>복잡한 수치 분석, 통계 작업, 재무 모델링</p>
+              <div class="recommendation">
+                <span>추천 도구:</span>
+                <strong style="color: #1f5582;">Excel</strong>
+              </div>
+            </div>
+            
+            <div class="use-case-card" data-recommended="googleSheets">
+              <h4>실시간 협업 중심</h4>
+              <p>팀 작업, 실시간 공유, 원격 근무</p>
+              <div class="recommendation">
+                <span>추천 도구:</span>
+                <strong style="color: #0f9d58;">Google Sheets</strong>
+              </div>
+            </div>
+            
+            <div class="use-case-card" data-recommended="airtable">
+              <h4>프로젝트 관리</h4>
+              <p>워크플로우 관리, CRM, 관계형 데이터</p>
+              <div class="recommendation">
+                <span>추천 도구:</span>
+                <strong style="color: #ff6900;">Airtable</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 추천 엔진 섹션 -->
+    <section id="recommendation" class="section">
+      <div class="container">
+        <h2 class="section-title">맞춤 도구 추천 엔진</h2>
+        <p class="section-desc">귀하의 우선순위에 맞는 스프레드시트 도구를 찾아보세요.</p>
+        
+        <div class="recommendation-engine card">
+          <div class="card__body">
+            <form id="recommendation-form" class="recommendation-form">
+              <div class="form-group">
+                <label class="form-label" for="collaboration-priority">협업의 중요도</label>
+                <input type="range" class="form-range" id="collaboration-priority" min="1" max="5" value="3">
+                <div class="range-labels">
+                  <span>매우 낮음</span>
+                  <span>매우 높음</span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="data-complexity">데이터 처리 복잡도</label>
+                <input type="range" class="form-range" id="data-complexity" min="1" max="5" value="3">
+                <div class="range-labels">
+                  <span>매우 간단</span>
+                  <span>매우 복잡</span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="budget-consideration">예산 고려사항</label>
+                <input type="range" class="form-range" id="budget-consideration" min="1" max="5" value="3">
+                <div class="range-labels">
+                  <span>예산 충분</span>
+                  <span>무료 선호</span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="team-size">팀 규모</label>
+                <select class="form-control" id="team-size">
+                  <option value="small">소규모 (1-5명)</option>
+                  <option value="medium" selected>중간 규모 (6-20명)</option>
+                  <option value="large">대규모 (20명 이상)</option>
+                </select>
+              </div>
+              
+              <button type="submit" class="btn btn--primary btn--full-width">맞춤 도구 찾기</button>
+            </form>
+            
+            <div id="recommendation-result" class="recommendation-result hidden">
+              <h3>추천 결과</h3>
+              <div class="result-container">
+                <div class="result-header">
+                  <div id="result-icon" class="tool-icon large"></div>
+                  <div>
+                    <h4 id="result-name"></h4>
+                    <p id="result-summary"></p>
+                  </div>
+                </div>
+                <p id="result-reason"></p>
+                <div class="result-scores">
+                  <h5>평가 점수</h5>
+                  <div class="score-bars">
+                    <div class="score-bar-container">
+                      <span>Excel</span>
+                      <div class="score-bar-wrapper">
+                        <div id="excel-score" class="score-bar" style="--tool-color: #1f5582;"></div>
+                      </div>
+                      <span id="excel-score-value"></span>
+                    </div>
+                    <div class="score-bar-container">
+                      <span>Google Sheets</span>
+                      <div class="score-bar-wrapper">
+                        <div id="googleSheets-score" class="score-bar" style="--tool-color: #0f9d58;"></div>
+                      </div>
+                      <span id="googleSheets-score-value"></span>
+                    </div>
+                    <div class="score-bar-container">
+                      <span>Airtable</span>
+                      <div class="score-bar-wrapper">
+                        <div id="airtable-score" class="score-bar" style="--tool-color: #ff6900;"></div>
+                      </div>
+                      <span id="airtable-score-value"></span>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn--secondary" id="reset-recommendation">다시 찾기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>© 2025 스프레드시트 도구 비교 분석 | 모든 권리 보유</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
