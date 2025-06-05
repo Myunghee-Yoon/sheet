@@ -1,67 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Spreadsheet Tools Comparison: Excel vs Google Sheets vs Airtable</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    :root {
-      --excel: #217346;
-      --gsheets: #0b8043;
-      --airtable: #ffb400;
-      --bg: #f7f9fa;
-      --card: #fff;
-      --border: #e0e0e0;
-      --text: #222;
-      --accent: #3367d6;
-    }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: var(--accent);
-      color: #fff;
-      padding: 2rem 1rem 1rem 1rem;
-      text-align: center;
-    }
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 2.2rem;
-      letter-spacing: -1px;
-    }
-    nav {
-      margin: 1.5rem auto 0 auto;
-      max-width: 900px;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-    nav button {
-      background: #fff;
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 1rem;
-      padding: 0.6rem 1.3rem;
-      border-radius: 1.5rem;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-    nav button.active, nav button:hover {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .card-row {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel vs Google Sheets vs Airtable - Comprehensive Comparison 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(45deg, #4285f4, #34a853, #ea4335);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .tool-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .excel-card {
+            border-color: #107c10;
+        }
+        
+        .sheets-card {
+            border-color: #34a853;
+        }
+        
+        .airtable-card {
+            border-color: #2d7ff9;
+        }
+        
+        .tool-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .excel-icon { background: #107c10; }
+        .sheets-icon { background: #34a853; }
+        .airtable-icon { background: #2d7ff9; }
+        
+        .tool-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .pricing {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #107c10;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .feature-rating {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .star {
+            width: 16px;
+            height: 16px;
+            background: #ddd;
+            border-radius: 2px;
+        }
+        
+        .star.filled {
+            background: #ffd700;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .pros, .cons {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+        
+        .pros {
+            border-left-color: #28a745;
+        }
+        
+        .cons {
+            border-left-color: #dc3545;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 40px 0 20px 0;
+            text-align: center;
+            color: #333;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background: #4285f4;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .use-cases {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .case-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #4285f4;
+        }
+        
+        .recommendation-box {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: #4285f4;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #2458cc;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Excel vs Google Sheets vs Airtable</h1>
+            <div class="subtitle">Comprehensive Comparison Guide 2025</div>
+        </header>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="showAll()">All Features</button>
+            <button class="filter-btn" onclick="filterByCategory('collaboration')">Collaboration</button>
+            <button class="filter-btn" onclick="filterByCategory('analysis')">Data Analysis</button>
+            <button class="filter-btn" onclick="filterByCategory('pricing')">Pricing</button>
+        </div>
+
+        <div class="tool-grid">
+            <!-- Excel Card -->
+            <div class="tool-card excel-card" data-tool="excel">
+                <div class="tool-header">
+                    <div class="tool-icon excel-icon">XL</div>
+                    <div class="tool-name">Microsoft Excel</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">$69.99/year</div>
+                    <div>Personal | $8.25/user/month Business</div>
+                </div>
+                
+                <ul class="features-list">
+                    <li>
+                        Data Processing Power
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Collaboration Features
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Ease of Use
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Advanced Formulas
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ Advantages</h4>
+                        <ul>
+                            <li>Handles millions of rows efficiently</li>
+                            <li>Advanced statistical functions</li>
+                            <li>Powerful macro capabilities</li>
+                            <li>Excellent offline functionality</li>
+                            <li>Industry-standard tool</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ Disadvantages</h4>
+                        <ul>
+                            <li>Expensive licensing costs</li>
+                            <li>Steep learning curve</li>
+                            <li>Limited real-time collaboration</li>
+                            <li>Version control challenges</li>
+                            <li>Susceptible to macro viruses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Sheets Card -->
+            <div class="tool-card sheets-card" data-tool="sheets">
+                <div class="tool-header">
+                    <div class="tool-icon sheets-icon">GS</div>
+                    <div class="tool-name">Google Sheets</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">Free</div>
+                    <div>Personal | $8.40/user/month Business</div>
+                </div>
+                
+                <ul class="features-list">
+                    <li>
+                        Data Processing Power
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Collaboration Features
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Ease of Use
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Advanced Formulas
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ Advantages</h4>
+                        <ul>
+                            <li>Completely free for personal use</li>
+                            <li>Excellent real-time collaboration</li>
+                            <li>Cloud-based accessibility</li>
+                            <li>Automatic saving and version history</li>
+                            <li>Easy sharing and permissions</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ Disadvantages</h4>
+                        <ul>
+                            <li>10 million cell limitation</li>
+                            <li>Requires internet connection</li>
+                            <li>Limited advanced functions</li>
+                            <li>Performance issues with large datasets</li>
+                            <li>Basic offline capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Airtable Card -->
+            <div class="tool-card airtable-card" data-tool="airtable">
+                <div class="tool-header">
+                    <div class="tool-icon airtable-icon">AT</div>
+                    <div class="tool-name">Airtable</div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="price">Free (Limited)</div>
+                    <div>Up to 5 users | $20/user/month Team</div>
+                </div>
+                
+                <ul class="features-list">
+                    <li>
+                        Data Processing Power
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Collaboration Features
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Visualization Options
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Automation Capabilities
+                        <div class="feature-rating">
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star filled"></div>
+                            <div class="star"></div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>✅ Advantages</h4>
+                        <ul>
+                            <li>Database-spreadsheet hybrid</li>
+                            <li>Multiple view types (Grid, Kanban, Calendar)</li>
+                            <li>Built-in automation workflows</li>
+                            <li>Rich field types and linking</li>
+                            <li>Extensive template library</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>❌ Disadvantages</h4>
+                        <ul>
+                            <li>Can become expensive quickly</li>
+                            <li>50,000 record limit per base</li>
+                            <li>Requires internet connection</li>
+                            <li>Limited complex calculations</li>
+                            <li>Learning curve for database concepts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">Feature Comparison Matrix</div>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Microsoft Excel</th>
+                    <th>Google Sheets</th>
+                    <th>Airtable</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Data Processing Power</strong></td>
+                    <td>Excellent - Handles millions of rows</td>
+                    <td>Good - 10M cell limit</td>
+                    <td>Good - 50K records per base</td>
+                </tr>
+                <tr>
+                    <td><strong>Real-time Collaboration</strong></td>
+                    <td>Limited - Basic co-authoring</td>
+                    <td>Excellent - Real-time editing</td>
+                    <td>Good - Structured collaboration</td>
+                </tr>
+                <tr>
+                    <td><strong>Automation & Workflows</strong></td>
+                    <td>Good - Macros and Power Automate</td>
+                    <td>Moderate - Google Apps Script</td>
+                    <td>Good - Built-in automations</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Visualization</strong></td>
+                    <td>Good - Advanced charting</td>
+                    <td>Moderate - Basic charts</td>
+                    <td>Excellent - Multiple view types</td>
+                </tr>
+                <tr>
+                    <td><strong>AI Integration</strong></td>
+                    <td>Good - Microsoft Copilot</td>
+                    <td>Moderate - Google Gemini</td>
+                    <td>Moderate - AI-powered features</td>
+                </tr>
+                <tr>
+                    <td><strong>Offline Functionality</strong></td>
+                    <td>Excellent - Full offline capability</td>
+                    <td>Limited - Basic offline mode</td>
+                    <td>Poor - Requires internet</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost Effectiveness</strong></td>
+                    <td>Low - Expensive licensing</td>
+                    <td>Excellent - Free for most users</td>
+                    <td>Moderate - Can get expensive</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">Use Cases & Recommendations</div>
+        <div class="use-cases">
+            <div class="case-item">
+                <h4>🏢 Choose Excel When:</h4>
+                <p>• Advanced financial modeling and complex data analysis<br>
+                • Working with massive datasets (millions of rows)<br>
+                • Need sophisticated statistical functions<br>
+                • Require offline access and desktop performance<br>
+                • Industry-specific requirements (finance, engineering)</p>
+            </div>
+            
+            <div class="case-item">
+                <h4>👥 Choose Google Sheets When:</h4>
+                <p>• Real-time team collaboration is essential<br>
+                • Budget constraints (free for personal use)<br>
+                • Simple to moderate data analysis needs<br>
+                • Remote teams requiring cloud accessibility<br>
+                • Integration with Google Workspace ecosystem</p>
+            </div>
+            
+            <div class="case-item">
+                <h4>📊 Choose Airtable When:</h4>
+                <p>• Project management and workflow automation<br>
+                • Need database functionality with spreadsheet ease<br>
+                • Content management and CRM applications<br>
+                • Visual data organization (Kanban, Calendar views)<br>
+                • Team coordination with structured data relationships</p>
+            </div>
+        </div>
+
+        <div class="recommendation-box">
+            <h3>💡 Quick Decision Guide</h3>
+            <p><strong>Data Analyst/Financial Professional:</strong> Choose Excel<br>
+            <strong>Small Team/Startup:</strong> Choose Google Sheets<br>
+            <strong>Project Manager/Operations:</strong> Choose Airtable</p>
+        </div>
+    </div>
+
+    <script>
+        function showAll() {
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(card => card.style.display = 'block');
+            setActiveButton(event.target);
+        }
+
+        function filterByCategory(category) {
+            const cards = document.querySelectorAll('.tool-card');
+            
+            cards.forEach(card => {
+                switch(category) {
+                    case 'collaboration':
+                        // Show cards with high collaboration ratings
+                        const tool = card.dataset.tool;
+                        if (tool === 'sheets' || tool === 'airtable') {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                        break;
+                    case 'analysis':
+                        // Show cards with high analysis capabilities
+                        if (card.dataset.tool === 'excel') {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                        break;
+                    case 'pricing':
+                        // Show all for pricing comparison
+                        card.style.display = 'block';
+                        break;
+                    default:
+                        card.style.display = 'block';
+                }
+            });
+            
+            setActiveButton(event.target);
+        }
+
+        function setActiveButton(activeBtn) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            activeBtn.classList.add('active');
+        }
+
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Toggle detailed view (you can expand this)
+                    console.log('Card clicked:', this.dataset.tool);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
